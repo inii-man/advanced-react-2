@@ -1,0 +1,33 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SimpleTestForm Component > Snapshot test form 1`] = `
+<form
+  data-testid="test-form"
+>
+  <div
+    style="margin-bottom: 10px;"
+  >
+    <label
+      for="username"
+      style="margin-right: 10px;"
+    >
+      Username
+    </label>
+    <input
+      data-testid="username-input"
+      id="username"
+      name="username"
+      placeholder="Ketik username..."
+      style="padding: 5px;"
+      type="text"
+    />
+  </div>
+  <button
+    data-testid="submit-button"
+    style="padding: 8px;"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;

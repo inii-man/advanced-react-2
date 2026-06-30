@@ -3,8 +3,10 @@ import { useState } from 'react'
 // Mengimpor styling utama aplikasi
 import './App.css'
 
-// Mengimpor komponen pembelajaran untuk Redux
+// Mengimpor komponen pembelajaran
 import { ReduxApp } from './01-redux/ReduxApp'
+import { TestingApp } from './02-testing/TestingApp'
+import { SSRApp } from './03-ssr/SSRApp'
 
 // Komponen utama aplikasi
 function App() {
@@ -26,7 +28,20 @@ function App() {
         >
           Modul 1: State Management using Redux
         </button>
-        {/* Nanti bisa ditambahkan tombol untuk Testing dan SSR di sini */}
+        {/* Tombol untuk membuka tab Modul 2: Testing */}
+        <button 
+          onClick={() => setActiveTab('testing')}
+          style={{ backgroundColor: activeTab === 'testing' ? '#cce5ff' : '' }}
+        >
+          Modul 2: React Testing
+        </button>
+        {/* Tombol untuk membuka tab Modul 3: SSR */}
+        <button 
+          onClick={() => setActiveTab('ssr')}
+          style={{ backgroundColor: activeTab === 'ssr' ? '#cce5ff' : '' }}
+        >
+          Modul 3: Server Side Rendering
+        </button>
       </div>
 
       {/* Area konten tempat komponen yang aktif ditampilkan */}
@@ -38,7 +53,21 @@ function App() {
             <ReduxApp />
           </div>
         )}
+
+        {/* Menampilkan Modul 2: Testing */}
+        {activeTab === 'testing' && (
+          <div style={{ textAlign: 'left' }}>
+            <TestingApp />
+          </div>
+        )}
         
+        {/* Menampilkan Modul 3: SSR */}
+        {activeTab === 'ssr' && (
+          <div style={{ textAlign: 'left' }}>
+            <SSRApp />
+          </div>
+        )}
+
       </div>
     </div>
   )

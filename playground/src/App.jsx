@@ -7,6 +7,7 @@ import './App.css'
 import { ReduxApp } from './01-redux/ReduxApp'
 import { TestingApp } from './02-testing/TestingApp'
 import { SSRApp } from './03-ssr/SSRApp'
+import { StylingApp } from './04-styling/StylingApp'
 
 // Komponen utama aplikasi
 function App() {
@@ -42,6 +43,13 @@ function App() {
         >
           Modul 3: Server Side Rendering
         </button>
+        {/* Tombol untuk membuka tab Modul 4: Styling */}
+        <button 
+          onClick={() => setActiveTab('styling')}
+          style={{ backgroundColor: activeTab === 'styling' ? '#cce5ff' : '' }}
+        >
+          Modul 4: Styled Components
+        </button>
       </div>
 
       {/* Area konten tempat komponen yang aktif ditampilkan */}
@@ -65,6 +73,13 @@ function App() {
         {activeTab === 'ssr' && (
           <div style={{ textAlign: 'left' }}>
             <SSRApp />
+          </div>
+        )}
+
+        {/* Menampilkan Modul 4: Styling */}
+        {activeTab === 'styling' && (
+          <div style={{ textAlign: 'left' }}>
+            <StylingApp />
           </div>
         )}
 
